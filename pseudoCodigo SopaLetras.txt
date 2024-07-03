@@ -1,0 +1,106 @@
+Referenciamos las direcciones y la asociamos a un numero
+1 norte
+2 sur 
+3 este 
+4 oste 
+texto = leer palabras.txt #Cargamos el archivo txt
+sopaletras[20][20]
+posiciones[tamaño(texto)]
+direcciones[tamaño(texto)]
+int posicion, direccion, palabracargada
+int posF
+int posC
+for cada palabra de texto
+ palabraCargada=0
+ while palabraCargada=0
+  posicion generarNumeroAleatorio(0-399)
+  direccion generarNumeroAleatorio(1-4)
+  if verificar(posicion,direccion,tamaño(palabra)) 
+   if !existe(posicion,direccion,tamaño(palabra))
+    escribirPalabra(posicion,direccion,tamaño(palabra))
+    palabraCargada=1
+    posiciones.add(posicion)
+    direcciones.add(direccion)  
+
+for sopaLetras i
+ for sopaLetras j
+  if sopaLetras[i][j]==null
+   sopaLetras[i][j]=generarLetraAleatoria
+
+
+boolean verificar(int posicion,int direccion ,int tamaño)
+ if direccion = 1
+  espacioDisponible=posicion//20+1
+  if tamaño<=espacioDisponible
+   return true 
+
+ if direccion = 2
+  espacioDisponible=20-posicion//20
+  if tamaño<=espacioDisponible
+   return true
+
+ if direccion = 3 
+  espacioDisponible=20-posicion%20
+  if tamaño<=espacioDisponible
+   return true
+
+ if direccion = 4 
+  espacioDisponible=posicion%20+1
+  if tamaño<=espacioDisponible
+   return true
+
+ return false
+
+boolean Existe(int posicion,int direccion ,int tamaño)
+ posF=posicion//20
+ posC=posiccion%20
+
+ if direccion = 1
+  for i=0 i<tamaño i++
+   if sopaLetras[posF-i][posC]!=null
+    return true
+
+ if direccion = 2
+  for i=0 i<tamaño i++
+   if sopaLetras[posF+i][posC]!=null
+    return true
+
+ if direccion = 3
+  for i=0 i<tamaño i++
+   if sopaLetras[posF][posC+i]!=null
+    return true
+
+ if direccion = 4
+  for i=0 i<tamaño i++
+   if sopaLetras[posF][posC-i]!=null
+    return true
+
+ return false
+
+
+void escribirPalabra(int posicion,int direccion ,int tamaño)
+ posF=posicion//20
+ posC=posiccion%20
+
+ if direccion = 1
+  for i=0 i<tamaño i++
+   sopaLetras[posF-i][posC]=palabra[i]
+
+ if direccion = 2
+  for i=0 i<tamaño i++
+   sopaLetras[posF+i][posC]=palabra[i]
+
+ if direccion = 3
+  for i=0 i<tamaño i++
+   sopaLetras[posF][posC+i]=palabra[i]
+
+ if direccion = 4
+  for i=0 i<tamaño i++
+   sopaLetras[posF][posC-i]=palabra[i]
+   
+
+guardar sopaLetra txt
+        ____________________________________
+        1. Norte  2. sur  3. este  4. oeste
+        for tamaño(texto)
+        palabra i posicion fila:posiciones[i]//20, columna:posiciones[i]%20 y direccion = direcciones[i]
